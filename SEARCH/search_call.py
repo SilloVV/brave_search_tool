@@ -2,7 +2,7 @@ import requests
 from typing import Dict, List, Any, Optional
 from LLM.env_variable_loader import load_var_env
 
-def brave_search(query: str, count: int = 10) -> Dict[str, Any]:
+def brave_search(query: str, count: int = 8) -> Dict[str, Any]:
     """
     Effectue une recherche web via l'API Brave Search.
     
@@ -67,7 +67,7 @@ def extract_search_results(search_data: Dict[str, Any]) -> List[Dict[str, str]]:
 
 if __name__ == "__main__":
     # Exemple d'utilisation
-    search_query = "définition d'un lien de subordination"
+    search_query = "personne morale SARL"
     raw_results = brave_search(search_query, count=5)
     results = extract_search_results(raw_results)
     
